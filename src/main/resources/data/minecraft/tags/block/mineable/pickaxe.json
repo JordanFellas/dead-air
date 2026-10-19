@@ -18,6 +18,8 @@
                    "dead_air:sloped_lattice_panel",
                    "dead_air:sloped_heavy_panel",
                    "dead_air:aviation_light",
-                   "dead_air:tower_foundation"
+                   "dead_air:tower_foundation",
+                   "dead_air:station_console",
+                   "dead_air:studio_mic"
                ]
 }

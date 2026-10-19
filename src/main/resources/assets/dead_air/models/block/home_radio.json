@@ -1,0 +1,556 @@
+{
+    "parent":  "minecraft:block/block",
+    "textures":  {
+                     "particle":  "dead_air:block/radio_wood",
+                     "wood":  "dead_air:block/radio_wood",
+                     "cloth":  "dead_air:block/radio_cloth",
+                     "dial":  "dead_air:block/radio_dial",
+                     "knob":  "dead_air:block/radio_knob"
+                 },
+    "elements":  [
+                     {
+                         "from":  [
+                                      1,
+                                      0,
+                                      4
+                                  ],
+                         "to":  [
+                                    15,
+                                    9,
+                                    12
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                1,
+                                                                7,
+                                                                15,
+                                                                16
+                                                            ],
+                                                     "texture":  "#wood"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                1,
+                                                                7,
+                                                                15,
+                                                                16
+                                                            ],
+                                                     "texture":  "#wood"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               4,
+                                                               7,
+                                                               12,
+                                                               16
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               4,
+                                                               7,
+                                                               12,
+                                                               16
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             1,
+                                                             4,
+                                                             15,
+                                                             12
+                                                         ],
+                                                  "texture":  "#wood"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               1,
+                                                               4,
+                                                               15,
+                                                               12
+                                                           ],
+                                                    "texture":  "#wood"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      2,
+                                      9,
+                                      4.5
+                                  ],
+                         "to":  [
+                                    14,
+                                    10,
+                                    11.5
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                2,
+                                                                6,
+                                                                14,
+                                                                7
+                                                            ],
+                                                     "texture":  "#wood"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                2,
+                                                                6,
+                                                                14,
+                                                                7
+                                                            ],
+                                                     "texture":  "#wood"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               4.5,
+                                                               6,
+                                                               11.5,
+                                                               7
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               4.5,
+                                                               6,
+                                                               11.5,
+                                                               7
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             2,
+                                                             4.5,
+                                                             14,
+                                                             11.5
+                                                         ],
+                                                  "texture":  "#wood"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               2,
+                                                               4.5,
+                                                               14,
+                                                               11.5
+                                                           ],
+                                                    "texture":  "#wood"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      2,
+                                      1.5,
+                                      3.75
+                                  ],
+                         "to":  [
+                                    9,
+                                    8,
+                                    4
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                16,
+                                                                16
+                                                            ],
+                                                     "texture":  "#cloth"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                2,
+                                                                8,
+                                                                9,
+                                                                14.5
+                                                            ],
+                                                     "texture":  "#wood"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               12,
+                                                               8,
+                                                               12.25,
+                                                               14.5
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               3.75,
+                                                               8,
+                                                               4,
+                                                               14.5
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             2,
+                                                             3.75,
+                                                             9,
+                                                             4
+                                                         ],
+                                                  "texture":  "#wood"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               2,
+                                                               12,
+                                                               9,
+                                                               12.25
+                                                           ],
+                                                    "texture":  "#wood"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      10,
+                                      4.5,
+                                      3.75
+                                  ],
+                         "to":  [
+                                    14,
+                                    8,
+                                    4
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                16,
+                                                                16
+                                                            ],
+                                                     "texture":  "#dial"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                10,
+                                                                8,
+                                                                14,
+                                                                11.5
+                                                            ],
+                                                     "texture":  "#wood"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               12,
+                                                               8,
+                                                               12.25,
+                                                               11.5
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               3.75,
+                                                               8,
+                                                               4,
+                                                               11.5
+                                                           ],
+                                                    "texture":  "#wood"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             10,
+                                                             3.75,
+                                                             14,
+                                                             4
+                                                         ],
+                                                  "texture":  "#wood"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               10,
+                                                               12,
+                                                               14,
+                                                               12.25
+                                                           ],
+                                                    "texture":  "#wood"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      10.25,
+                                      1.25,
+                                      3
+                                  ],
+                         "to":  [
+                                    11.75,
+                                    2.75,
+                                    4
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                4.25,
+                                                                13.25,
+                                                                5.75,
+                                                                14.75
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                10.25,
+                                                                13.25,
+                                                                11.75,
+                                                                14.75
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               12,
+                                                               13.25,
+                                                               13,
+                                                               14.75
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               3,
+                                                               13.25,
+                                                               4,
+                                                               14.75
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             10.25,
+                                                             3,
+                                                             11.75,
+                                                             4
+                                                         ],
+                                                  "texture":  "#knob"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               10.25,
+                                                               12,
+                                                               11.75,
+                                                               13
+                                                           ],
+                                                    "texture":  "#knob"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      12.25,
+                                      1.25,
+                                      3
+                                  ],
+                         "to":  [
+                                    13.75,
+                                    2.75,
+                                    4
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                2.25,
+                                                                13.25,
+                                                                3.75,
+                                                                14.75
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                12.25,
+                                                                13.25,
+                                                                13.75,
+                                                                14.75
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               12,
+                                                               13.25,
+                                                               13,
+                                                               14.75
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               3,
+                                                               13.25,
+                                                               4,
+                                                               14.75
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             12.25,
+                                                             3,
+                                                             13.75,
+                                                             4
+                                                         ],
+                                                  "texture":  "#knob"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               12.25,
+                                                               12,
+                                                               13.75,
+                                                               13
+                                                           ],
+                                                    "texture":  "#knob"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      2,
+                                      0,
+                                      4
+                                  ],
+                         "to":  [
+                                    3,
+                                    0.5,
+                                    5
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                13,
+                                                                15.5,
+                                                                14,
+                                                                16
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                2,
+                                                                15.5,
+                                                                3,
+                                                                16
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               11,
+                                                               15.5,
+                                                               12,
+                                                               16
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               4,
+                                                               15.5,
+                                                               5,
+                                                               16
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             2,
+                                                             4,
+                                                             3,
+                                                             5
+                                                         ],
+                                                  "texture":  "#knob"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               2,
+                                                               11,
+                                                               3,
+                                                               12
+                                                           ],
+                                                    "texture":  "#knob"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      13,
+                                      0,
+                                      4
+                                  ],
+                         "to":  [
+                                    14,
+                                    0.5,
+                                    5
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                2,
+                                                                15.5,
+                                                                3,
+                                                                16
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                13,
+                                                                15.5,
+                                                                14,
+                                                                16
+                                                            ],
+                                                     "texture":  "#knob"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               11,
+                                                               15.5,
+                                                               12,
+                                                               16
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               4,
+                                                               15.5,
+                                                               5,
+                                                               16
+                                                           ],
+                                                    "texture":  "#knob"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             13,
+                                                             4,
+                                                             14,
+                                                             5
+                                                         ],
+                                                  "texture":  "#knob"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               13,
+                                                               11,
+                                                               14,
+                                                               12
+                                                           ],
+                                                    "texture":  "#knob"
+                                                }
+                                   }
+                     }
+                 ]
+}

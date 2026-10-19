@@ -2,6 +2,9 @@ package com.wasteland.deadair.client
 
 import com.wasteland.deadair.client.gui.RadioScreen
 import com.wasteland.deadair.client.gui.RadioTowerScreen
+import com.wasteland.deadair.client.gui.StationConsoleScreen
+import com.wasteland.deadair.client.sound.StationDiscPlayer
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent
 import com.wasteland.deadair.client.render.RadioBackpackLayer
 import com.wasteland.deadair.client.render.WalkieClientExtensions
 import com.wasteland.deadair.registry.ModItems
@@ -21,6 +24,12 @@ object ClientSetup {
 
     fun registerScreens(event: RegisterMenuScreensEvent) {
         event.register(ModMenus.RADIO_TOWER_MENU.get(), ::RadioTowerScreen)
+        event.register(ModMenus.STATION_CONSOLE_MENU.get(), ::StationConsoleScreen)
+    }
+
+    fun onLoggingOut(event: ClientPlayerNetworkEvent.LoggingOut) {
+        StationDiscPlayer.stopAll()
+        ClientRadioState.clear()
     }
 
     fun registerKeyMappings(event: RegisterKeyMappingsEvent) {

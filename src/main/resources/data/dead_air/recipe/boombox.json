@@ -1,0 +1,27 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    "CIC",
+                    "NBN",
+                    "III"
+                ],
+    "key":  {
+                "C":  {
+                          "item":  "minecraft:copper_ingot"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "N":  {
+                          "item":  "minecraft:note_block"
+                      },
+                "B":  {
+                          "item":  "dead_air:battery_cell"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:boombox",
+                   "count":  1
+               }
+}

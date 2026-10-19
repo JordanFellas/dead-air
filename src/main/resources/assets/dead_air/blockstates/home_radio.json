@@ -1,0 +1,34 @@
+{
+    "variants":  {
+                     "facing=north,on=false":  {
+                                                   "model":  "dead_air:block/home_radio"
+                                               },
+                     "facing=north,on=true":  {
+                                                  "model":  "dead_air:block/home_radio_on"
+                                              },
+                     "facing=east,on=false":  {
+                                                  "model":  "dead_air:block/home_radio",
+                                                  "y":  90
+                                              },
+                     "facing=east,on=true":  {
+                                                 "model":  "dead_air:block/home_radio_on",
+                                                 "y":  90
+                                             },
+                     "facing=south,on=false":  {
+                                                   "model":  "dead_air:block/home_radio",
+                                                   "y":  180
+                                               },
+                     "facing=south,on=true":  {
+                                                  "model":  "dead_air:block/home_radio_on",
+                                                  "y":  180
+                                              },
+                     "facing=west,on=false":  {
+                                                  "model":  "dead_air:block/home_radio",
+                                                  "y":  270
+                                              },
+                     "facing=west,on=true":  {
+                                                 "model":  "dead_air:block/home_radio_on",
+                                                 "y":  270
+                                             }
+                 }
+}

@@ -4,6 +4,9 @@ import com.wasteland.deadair.DeadAir
 import com.wasteland.deadair.block.AviationLightBlock
 import com.wasteland.deadair.block.BroadcastControllerBlock
 import com.wasteland.deadair.block.DirectionalAntennaBlock
+import com.wasteland.deadair.block.HomeRadioBlock
+import com.wasteland.deadair.block.StationConsoleBlock
+import com.wasteland.deadair.block.StudioMicBlock
 import com.wasteland.deadair.block.RadioMastSectionBlock
 import com.wasteland.deadair.block.RadioTowerAntennaBlock
 import com.wasteland.deadair.block.RadioTowerControllerBlock
@@ -151,5 +154,27 @@ object ModBlocks {
     val DRUM_DISH: DeferredBlock<DirectionalAntennaBlock> =
         BLOCKS.register("drum_dish", Supplier {
             DirectionalAntennaBlock(metal(2.5f, SoundType.METAL), 150, 100, Block.box(2.0, 1.0, 2.0, 14.0, 15.0, 14.0))
+        })
+
+    // ---- Radio stations ----
+
+    val STATION_CONSOLE: DeferredBlock<StationConsoleBlock> =
+        BLOCKS.register("station_console", Supplier {
+            StationConsoleBlock(metal(3.0f, SoundType.METAL).lightLevel { if (it.getValue(StationConsoleBlock.LIVE)) 6 else 0 })
+        })
+
+    val STUDIO_MIC: DeferredBlock<StudioMicBlock> =
+        BLOCKS.register("studio_mic", Supplier { StudioMicBlock(metal(1.0f, SoundType.LANTERN)) })
+
+    val HOME_RADIO: DeferredBlock<HomeRadioBlock> =
+        BLOCKS.register("home_radio", Supplier {
+            HomeRadioBlock(
+                BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(1.0f)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+                    .lightLevel { if (it.getValue(HomeRadioBlock.ON)) 4 else 0 }
+            )
         })
 }

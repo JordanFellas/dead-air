@@ -10,6 +10,8 @@ import de.maxhenkel.voicechat.api.VoicechatPlugin
 import de.maxhenkel.voicechat.api.events.EventRegistration
 import de.maxhenkel.voicechat.api.events.MicrophonePacketEvent
 import de.maxhenkel.voicechat.api.events.VoicechatServerStartedEvent
+import de.maxhenkel.voicechat.api.events.VoicechatServerStoppedEvent
+import com.wasteland.deadair.station.StationAudio
 import net.minecraft.core.BlockPos
 import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
@@ -40,6 +42,11 @@ class DeadAirVoicePlugin : VoicechatPlugin {
     private val radioChannelIds = ConcurrentHashMap<UUID, UUID>()
     private val effects = ConcurrentHashMap<UUID, RadioVoiceEffect>()
 
+    @Volatile
+    private var streamer: StationStreamer? = null
+    /** Players whose mic is currently feeding a station. */
+    private val djs: MutableSet<UUID> = ConcurrentHashMap.newKeySet()
+
     override fun getPluginId(): String = DeadAir.MOD_ID
 
     override fun initialize(api: VoicechatApi) {
@@ -50,6 +57,7 @@ class DeadAirVoicePlugin : VoicechatPlugin {
 
     override fun registerEvents(registration: EventRegistration) {
         registration.registerEvent(VoicechatServerStartedEvent::class.java, ::onServerStarted)
+        registration.registerEvent(VoicechatServerStoppedEvent::class.java, ::onServerStopped)
         registration.registerEvent(MicrophonePacketEvent::class.java, ::onMicrophone)
     }
 
@@ -62,11 +70,39 @@ class DeadAirVoicePlugin : VoicechatPlugin {
                 .setDescription("Voices received over Dead Air handheld radios")
                 .build()
         )
+        api.registerVolumeCategory(
+            api.volumeCategoryBuilder()
+                .setId(StationStreamer.CATEGORY)
+                .setName("Radio Stations")
+                .setDescription("Music, DJs and announcements from Dead Air radio stations")
+                .build()
+        )
+        StationAudio.backend?.shutdown()
+        StationAudio.backend = StationStreamer(api).also { streamer = it }
+    }
+
+    private fun onServerStopped(event: VoicechatServerStoppedEvent) {
+        StationAudio.backend?.shutdown()
+        StationAudio.backend = null
+        streamer = null
+        djs.clear()
     }
 
     private fun onMicrophone(event: MicrophonePacketEvent) {
         val api = event.voicechat
         val senderId = event.senderConnection?.player?.uuid ?: return
+
+        // Talking at a Studio Mic goes out live on that station (or into its announcement recording).
+        val djStation = StationAudio.djStations[senderId]
+        streamer?.let { s ->
+            if (djStation != null) {
+                djs.add(senderId)
+                s.pushDj(senderId, djStation, event.packet.opusEncodedData)
+            } else if (djs.remove(senderId)) {
+                s.forgetDj(senderId)
+            }
+        }
+
         val sender = RadioVoiceRelay.getState(senderId) ?: return
         val channel = sender.transmitChannel ?: return
 

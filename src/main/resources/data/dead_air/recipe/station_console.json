@@ -1,0 +1,30 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    "NJN",
+                    "CRC",
+                    "III"
+                ],
+    "key":  {
+                "N":  {
+                          "item":  "minecraft:note_block"
+                      },
+                "J":  {
+                          "item":  "minecraft:jukebox"
+                      },
+                "C":  {
+                          "item":  "minecraft:copper_ingot"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:station_console",
+                   "count":  1
+               }
+}

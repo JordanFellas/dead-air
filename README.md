@@ -25,6 +25,15 @@ Made for a Firewatch-inspired zombie apocalypse modpack.
 - Towers link into networks when their ranges overlap. Right-click any tower part with an empty hand to open its control panel.
 - Bigger towers use more power (from 20 FE/s). They accept FE from any energy mod or run on battery cells.
 
+### Radio stations
+Run your own station, like a wasteland KIIS FM, and broadcast it over your tower network.
+- **Station Console**: set a call sign and frequency, load up to 9 music discs, and switch on discs, server songs, shuffle and station IDs. It only goes on the air when a powered tower covers it.
+- **Server songs**: drop `.mp3` or `.wav` files in `config/dead_air/music/` on the server. A subfolder named after a call sign (`music/KIIS/`) gives that station its own playlist. Songs stream through Simple Voice Chat. Only use music you have the rights to play.
+- **Stream URL**: paste a direct MP3 link or an MP3 internet radio stream (Icecast/Shoutcast) into the console's URL box, press Enter, and the station relays it live. Song titles from the stream show up as "now playing". Only stream content you're allowed to rebroadcast. Server owners can turn this off or limit it to operators in `config/dead_air-common.toml`. Links to the local network are blocked by default.
+- **Studio Mic**: place it within 8 blocks of a console, stand next to it and talk to go live as the DJ. The music ducks under your voice. Right-click the mic to record a station ID, and right-click again to save it. It plays every N tracks.
+- **Listen on**: a walkie tuned to the station (the LCD shows what's playing), a **Home Radio** block that plays out loud, or a **Boombox** you carry around (right-click: on/off, sneak + right-click: tune, SCAN finds stations).
+- Weak signal adds hiss and crackle. Without Simple Voice Chat, stations still play music discs.
+
 ### Signal and power
 - `dead_air:signal_blocking_blocks` block tag: obsidian, deepslate, iron and similar blocks between you and your tower weaken the signal.
 - Three battery tiers: Scrap Battery Cell (50k FE), Lithium Battery Pack (250k FE), Fusion Power Core (1M FE).

@@ -4,10 +4,13 @@ import com.wasteland.deadair.client.ClientSetup
 import com.wasteland.deadair.network.RadioNetworkManager
 import com.wasteland.deadair.network.RadioVoiceRelay
 import com.wasteland.deadair.registry.*
+import com.wasteland.deadair.station.StationManager
 import net.minecraft.world.item.CreativeModeTabs
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.IEventBus
+import net.neoforged.fml.ModLoadingContext
 import net.neoforged.fml.common.Mod
+import net.neoforged.fml.config.ModConfig
 import net.neoforged.fml.loading.FMLEnvironment
 import net.neoforged.neoforge.capabilities.Capabilities
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent
@@ -39,6 +42,8 @@ class DeadAir(modBus: IEventBus) {
         ModCreativeTabs.CREATIVE_TABS.register(modBus)
         ModDataComponents.DATA_COMPONENTS.register(modBus)
 
+        ModLoadingContext.get().activeContainer.registerConfig(ModConfig.Type.COMMON, DeadAirConfig.SPEC)
+
         // Mod bus lifecycle listeners
         modBus.addListener(::onBuildCreativeTabs)
         modBus.addListener(::registerCapabilities)
@@ -56,6 +61,7 @@ class DeadAir(modBus: IEventBus) {
             modBus.addListener(ClientSetup::addRenderLayers)
             modBus.addListener(ClientSetup::registerClientExtensions)
             forgeBus.addListener(ClientSetup::onClientTick)
+            forgeBus.addListener(ClientSetup::onLoggingOut)
         }
     }
 
@@ -80,11 +86,13 @@ class DeadAir(modBus: IEventBus) {
     private fun onServerStopped(event: ServerStoppedEvent) {
         RadioNetworkManager.cleanup()
         RadioVoiceRelay.clear()
+        StationManager.clear()
         LOGGER.info("Dead Air Radio Network Manager cleaned up.")
     }
 
     private fun onServerTick(event: ServerTickEvent.Post) {
         RadioNetworkManager.tick()
         RadioVoiceRelay.tick(event.server)
+        StationManager.tick(event.server)
     }
 }

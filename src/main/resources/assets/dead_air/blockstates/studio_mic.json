@@ -1,0 +1,19 @@
+{
+    "variants":  {
+                     "facing=north":  {
+                                          "model":  "dead_air:block/studio_mic"
+                                      },
+                     "facing=east":  {
+                                         "model":  "dead_air:block/studio_mic",
+                                         "y":  90
+                                     },
+                     "facing=south":  {
+                                          "model":  "dead_air:block/studio_mic",
+                                          "y":  180
+                                      },
+                     "facing=west":  {
+                                         "model":  "dead_air:block/studio_mic",
+                                         "y":  270
+                                     }
+                 }
+}

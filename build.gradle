@@ -89,6 +89,15 @@ dependencies {
     implementation 'thedarkcolour:kotlinforforge-neoforge:5.5.0'
     compileOnly 'de.maxhenkel.voicechat:voicechat-api:2.5.0'
     compileOnly 'top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api'
+
+    // Streaming MP3 decoder (MIT) for radio station stream URLs, bundled inside the mod jar
+    jarJar(implementation('fr.delthas:javamp3')) {
+        version {
+            strictly '[1.0.1,2.0)'
+            prefer '1.0.1'
+        }
+    }
+    additionalRuntimeClasspath 'fr.delthas:javamp3:1.0.1'
 }
 
 tasks.withType(ProcessResources).configureEach {

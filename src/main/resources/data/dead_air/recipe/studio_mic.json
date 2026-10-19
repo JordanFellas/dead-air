@@ -1,0 +1,24 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    "B",
+                    "L",
+                    "S"
+                ],
+    "key":  {
+                "B":  {
+                          "item":  "minecraft:iron_bars"
+                      },
+                "L":  {
+                          "item":  "minecraft:lightning_rod"
+                      },
+                "S":  {
+                          "item":  "minecraft:smooth_stone_slab"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:studio_mic",
+                   "count":  1
+               }
+}

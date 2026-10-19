@@ -7,6 +7,10 @@ import com.wasteland.deadair.network.packets.PacketRadioStatic
 import com.wasteland.deadair.network.packets.PacketRadioStatus
 import com.wasteland.deadair.network.packets.PacketRadioTransmit
 import com.wasteland.deadair.network.packets.PacketSetRadioSettings
+import com.wasteland.deadair.network.packets.PacketStationDisc
+import com.wasteland.deadair.network.packets.PacketStationInfo
+import com.wasteland.deadair.network.packets.PacketStationSettings
+import com.wasteland.deadair.network.packets.PacketTunerSettings
 import com.wasteland.deadair.network.packets.PacketSwapRadioBattery
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
@@ -17,7 +21,7 @@ object PacketHandler {
 
     @SubscribeEvent
     fun registerPayloads(event: RegisterPayloadHandlersEvent) {
-        val registrar = event.registrar("2")
+        val registrar = event.registrar("4")
 
         registrar.playToServer(
             PacketRadioTransmit.TYPE,
@@ -60,5 +64,11 @@ object PacketHandler {
             PacketRadioSquelch.STREAM_CODEC,
             PacketRadioSquelch::handle
         )
+
+        // Radio stations
+        registrar.playToClient(PacketStationDisc.TYPE, PacketStationDisc.STREAM_CODEC, PacketStationDisc::handle)
+        registrar.playToClient(PacketStationInfo.TYPE, PacketStationInfo.STREAM_CODEC, PacketStationInfo::handle)
+        registrar.playToServer(PacketStationSettings.TYPE, PacketStationSettings.STREAM_CODEC, PacketStationSettings::handle)
+        registrar.playToServer(PacketTunerSettings.TYPE, PacketTunerSettings.STREAM_CODEC, PacketTunerSettings::handle)
     }
 }

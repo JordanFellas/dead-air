@@ -2,6 +2,7 @@ package com.wasteland.deadair.registry
 
 import com.wasteland.deadair.DeadAir
 import com.wasteland.deadair.item.BatteryCellItem
+import com.wasteland.deadair.item.BoomboxItem
 import com.wasteland.deadair.item.HandheldRadioItem
 import com.wasteland.deadair.item.RadioBackpackItem
 import net.minecraft.world.item.BlockItem
@@ -57,4 +58,13 @@ object ModItems {
     val DRUM_DISH = blockItem("drum_dish", ModBlocks.DRUM_DISH)
     val YAGI_ANTENNA = blockItem("yagi_antenna", ModBlocks.YAGI_ANTENNA)
     val PANEL_ANTENNA = blockItem("panel_antenna", ModBlocks.PANEL_ANTENNA)
+
+    // Radio stations
+    val STATION_CONSOLE = blockItem("station_console", ModBlocks.STATION_CONSOLE)
+    val STUDIO_MIC = blockItem("studio_mic", ModBlocks.STUDIO_MIC)
+    val HOME_RADIO = blockItem("home_radio", ModBlocks.HOME_RADIO)
+
+    val BOOMBOX: DeferredItem<BoomboxItem> = ITEMS.register("boombox", Supplier {
+        BoomboxItem(Item.Properties().stacksTo(1))
+    })
 }

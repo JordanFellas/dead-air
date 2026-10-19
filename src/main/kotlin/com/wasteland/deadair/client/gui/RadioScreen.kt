@@ -222,9 +222,13 @@ class RadioScreen(private val slot: Int) : Screen(Component.literal("Walkie-Talk
         g.pose().popPose()
         g.drawString(font, "MHz", x + 106, y + 38, LCD_INK, false)
 
-        // Bottom row: channel + batteries available
+        // Bottom row: channel (or the radio station on this frequency) + batteries available
         val preset = PRESETS.indexOfFirst { kotlin.math.abs(it - frequency) < 0.05f }
-        val channel = if (preset >= 0) "CH${preset + 1}" else "MANUAL"
+        val station = ClientRadioState.stationCallSign
+        val channel = if (station.isNotEmpty() && kotlin.math.abs(ClientRadioState.stationFrequency - frequency) < 0.05f) {
+            val title = ClientRadioState.stationTitle
+            font.plainSubstrByWidth(if (title.isEmpty()) "♫ $station" else "♫ $station: $title", w - 64)
+        } else if (preset >= 0) "CH${preset + 1}" else "MANUAL"
         g.drawString(font, channel, x + 6, y + h - 11, LCD_INK, false)
         val cells = countBatteries()
         g.drawString(font, "CELLS:$cells", x + w - 50, y + h - 11, LCD_INK, false)
