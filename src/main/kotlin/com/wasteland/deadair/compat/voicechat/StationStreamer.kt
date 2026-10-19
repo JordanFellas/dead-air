@@ -251,6 +251,20 @@ class StationStreamer(private val api: VoicechatServerApi) : StationAudioBackend
         djDecoders.clear()
     }
 
+    override fun validateSong(file: Path): String? {
+        val pcm = try {
+            decode(file)
+        } catch (e: Throwable) {
+            DeadAir.LOGGER.debug("Dead Air: song {} doesn't decode", file.fileName, e)
+            null
+        }
+        return when {
+            pcm == null -> "That file isn't a playable MP3 or WAV"
+            pcm.size < SAMPLE_RATE / 2 -> "That song is empty or too short"
+            else -> null
+        }
+    }
+
     /** Voice thread: a frame from a player standing at a Studio Mic. */
     fun pushDj(player: UUID, station: StationKey, opus: ByteArray) {
         if (opus.isEmpty()) return

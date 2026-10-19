@@ -50,6 +50,7 @@ object ClientSetup {
     fun onClientTick(event: ClientTickEvent.Post) {
         val mc = Minecraft.getInstance()
         val player = mc.player ?: return
+        ClientSongUploader.tick()
 
         while (KeyBindings.KEY_RADIO_CHAT.consumeClick()) {
             if (mc.screen != null) continue

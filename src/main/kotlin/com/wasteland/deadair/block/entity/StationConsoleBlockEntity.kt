@@ -49,7 +49,7 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
 
     companion object {
         const val DISC_SLOTS = 9
-        const val DATA_COUNT = 10
+        const val DATA_COUNT = 13
         const val MAX_CALL_SIGN = 12
         const val MIC_RANGE_XZ = 8
         const val MIC_RANGE_Y = 4
@@ -98,7 +98,8 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
         private set
     var frequency: Float = 99.9f
         private set
-    var onAir = true
+    /** New consoles start off the air; START BROADCAST turns them on. */
+    var onAir = false
     var playDiscs = true
     var playSongs = true
     var shuffle = false
@@ -139,6 +140,25 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
     var streamError: String? = null
         private set
 
+    /** One line in the console's MUSIC tab. [id] is "disc:<slot>" or "song:<file name>". */
+    data class PlaylistEntry(val id: String, val title: String, val removable: Boolean)
+
+    /** Everything this station can play, for the MUSIC tab. Bumps [playlistVersion] when it changes. */
+    var playlist: List<PlaylistEntry> = emptyList()
+        private set
+    var playlistVersion = 0
+        private set
+
+    /** Playlist id of what's on the air now, or "". */
+    val currentEntryId: String
+        get() = when (val track = current) {
+            is Track.Disc -> "disc:${track.slot}"
+            is Track.Song -> "song:${track.file.fileName}"
+            else -> ""
+        }
+
+    private val discCount: Int get() = items.count { isDisc(it) }
+
     val dataAccess: ContainerData = object : ContainerData {
         override fun get(index: Int): Int = when (index) {
             0 -> (frequency * 10).roundToInt()
@@ -155,6 +175,9 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
             7 -> if (recording) 1 else 0
             8 -> if (StationAudio.backend != null) 1 else 0
             9 -> if (DeadAirConfig.STREAM_URLS_ENABLED.get()) 1 else 0
+            10 -> discCount
+            11 -> if (streamUrl.isNotBlank()) 1 else 0
+            12 -> if (hasTower) 1 else 0
             else -> 0
         }
 
@@ -190,7 +213,7 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
         this.announceEvery = announceEvery.coerceIn(0, 9)
         if (playlistChanged) {
             queue.clear()
-            songCount = MusicLibrary.songsFor(this.callSign).size
+            refreshPlaylist()
         }
         if (streamChanged) {
             // Switch between stream and playlist (or to the new URL) right away.
@@ -207,6 +230,109 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
         nextStartTick = 0
     }
 
+    /** Plays the recorded station ID right now. Returns why not, or null. */
+    fun playIdNow(): String? {
+        val lvl = level as? ServerLevel ?: return null
+        val k = key ?: return null
+        val file = announcementFile(lvl, k)
+        return when {
+            !broadcasting -> notLiveReason()
+            StationAudio.backend == null -> "The station ID needs Simple Voice Chat on the server"
+            !Files.exists(file) -> "No station ID yet: right-click a Studio Mic to record one"
+            else -> {
+                stopTrack()
+                playTrack(Track.Announcement(file), lvl.gameTime)
+                tracksSinceId = 0
+                null
+            }
+        }
+    }
+
+    /** Plays one playlist entry right now (switching off the live stream). Returns why not, or null. */
+    fun playEntryNow(id: String): String? {
+        val lvl = level as? ServerLevel ?: return null
+        if (!broadcasting) return notLiveReason()
+        val track = trackFor(id) ?: return "That song isn't in the playlist anymore"
+        if (track is Track.Song && StationAudio.backend == null) return "Songs need Simple Voice Chat on the server"
+        if (playStream) {
+            playStream = false
+            setChanged()
+        }
+        stopTrack()
+        streamError = null
+        playTrack(track, lvl.gameTime)
+        return null
+    }
+
+    /** Deletes one of this station's own songs. Returns why not, or null. */
+    fun removeSong(id: String): String? {
+        val file = (trackFor(id) as? Track.Song)?.file ?: return "That song isn't in the playlist anymore"
+        if (!MusicLibrary.isOwnSong(callSign, file)) return "That song is shared by every station; remove it from the server's music folder"
+        if ((current as? Track.Song)?.file == file) skip()
+        return try {
+            Files.deleteIfExists(file)
+            queue.clear()
+            refreshPlaylist()
+            null
+        } catch (e: Exception) {
+            "Couldn't remove that song"
+        }
+    }
+
+    /** A song was just added from the MUSIC tab: put it on the air. Returns why it couldn't play yet, or null. */
+    fun onSongAdded(file: java.nio.file.Path): String? {
+        queue.clear()
+        playSongs = true
+        refreshPlaylist()
+        setChanged()
+        return playEntryNow("song:${file.fileName}")
+    }
+
+    /** A pasted link turned out to be live radio: relay it. */
+    fun useStream(url: String) {
+        applySettings(callSign, frequency, flags() or FLAG_STREAM, announceEvery, url)
+    }
+
+    /** What's stopping the station from broadcasting, in plain words. */
+    fun notLiveReason(): String = when {
+        !onAir -> "Press START BROADCAST first"
+        !hasTower -> "No powered radio tower in range"
+        else -> "The station isn't on the air"
+    }
+
+    private fun trackFor(id: String): Track? {
+        if (id.startsWith("disc:")) {
+            val slot = id.removePrefix("disc:").toIntOrNull() ?: return null
+            if (slot !in 0 until DISC_SLOTS) return null
+            val (sound, song) = discIn(slot) ?: return null
+            return Track.Disc(slot, sound, song.lengthInTicks(), song.description().string)
+        }
+        if (id.startsWith("song:")) {
+            val name = id.removePrefix("song:")
+            val file = MusicLibrary.songsFor(callSign).firstOrNull { it.fileName.toString() == name } ?: return null
+            return Track.Song(file, MusicLibrary.titleOf(file))
+        }
+        return null
+    }
+
+    /** Rebuilds the MUSIC tab list from the disc rack and the song folders. */
+    fun refreshPlaylist() {
+        val entries = ArrayList<PlaylistEntry>()
+        for (slot in 0 until DISC_SLOTS) {
+            val (_, song) = discIn(slot) ?: continue
+            entries.add(PlaylistEntry("disc:$slot", "Disc: ${song.description().string}", false))
+        }
+        val songs = MusicLibrary.songsFor(callSign)
+        songCount = songs.size
+        for (file in songs) {
+            entries.add(PlaylistEntry("song:${file.fileName}", MusicLibrary.titleOf(file), MusicLibrary.isOwnSong(callSign, file)))
+        }
+        if (entries != playlist) {
+            playlist = entries
+            playlistVersion++
+        }
+    }
+
     fun hasAnnouncement(): Boolean {
         val lvl = level as? ServerLevel ?: return false
         val k = key ?: return false
@@ -219,7 +345,7 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
 
         if (tickCounter % 60 == 1) {
             scanForMics(lvl)
-            songCount = MusicLibrary.songsFor(callSign).size
+            refreshPlaylist()
         }
         if (tickCounter % 10 == 0) {
             hasTower = RadioNetworkManager.getConnectedNetwork(lvl.dimension().location(), worldPosition).isNotEmpty()
@@ -427,6 +553,7 @@ class StationConsoleBlockEntity(pos: BlockPos, state: BlockState) :
 
     private fun onDiscsChanged() {
         queue.clear()
+        if (level?.isClientSide == false) refreshPlaylist()
         setChanged()
     }
 }

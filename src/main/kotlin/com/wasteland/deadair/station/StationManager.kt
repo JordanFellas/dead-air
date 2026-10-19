@@ -10,6 +10,7 @@ import com.wasteland.deadair.network.RadioNetworkManager
 import com.wasteland.deadair.network.RadioVoiceRelay
 import com.wasteland.deadair.network.packets.PacketStationDisc
 import com.wasteland.deadair.network.packets.PacketStationInfo
+import com.wasteland.deadair.network.packets.PacketStationPlaylist
 import net.minecraft.ChatFormatting
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
@@ -54,6 +55,8 @@ object StationManager {
     private val sentDiscs = HashMap<Pair<Sink, UUID>, SentDisc>()
     private val lastInfo = HashMap<UUID, String>()
     private val lastAnnounced = HashMap<UUID, String>()
+    /** What playlist each console viewer last got: "<station>#<version>#<current entry>". */
+    private val lastPlaylist = HashMap<UUID, String>()
     private val recordings = HashMap<StationKey, Recording>()
     private var tickCounter = 0
 
@@ -84,6 +87,8 @@ object StationManager {
         lastInfo.clear()
         lastAnnounced.clear()
         recordings.clear()
+        lastPlaylist.clear()
+        SongImports.clear()
         StationAudio.djStations = emptyMap()
         tickCounter = 0
     }
@@ -95,6 +100,7 @@ object StationManager {
         consoles.values.removeIf { it.isRemoved }
         homeRadios.values.removeIf { it.isRemoved }
         stopLongRecordings(server)
+        SongImports.tick(server)
 
         val djs = findDjs(server)
         val tuned = findListeners(server, djs)
@@ -105,6 +111,7 @@ object StationManager {
         val online = server.playerList.players.mapTo(HashSet()) { it.uuid }
         lastInfo.keys.retainAll(online)
         lastAnnounced.keys.retainAll(online)
+        lastPlaylist.keys.retainAll(online)
     }
 
     /** Works out the best station each walkie, Home Radio and boombox can hear. */
@@ -218,6 +225,12 @@ object StationManager {
             val console = menu?.let { consoles[StationKey(player.serverLevel().dimension().location(), it.pos)] }
             val heard = tuned[WalkieSink(player.uuid)] ?: tuned[BoomboxSink(player.uuid)] ?: nearestRadio(player, tuned)
             val station = console ?: heard?.station
+
+            // The MUSIC tab of an open console: send its playlist when it (or what's playing) changes.
+            val playlistKey = console?.let { "${it.key?.fileId}#${it.playlistVersion}#${it.currentEntryId}" } ?: ""
+            if (lastPlaylist.put(player.uuid, playlistKey) != playlistKey && console != null) {
+                PacketDistributor.sendToPlayer(player, PacketStationPlaylist(console.playlist, console.currentEntryId))
+            }
 
             val title = station?.let { it.current?.title ?: it.streamError?.let { error -> "⚠ $error" } } ?: ""
             val info = if (station == null) "" else "${station.callSign}|$title|${"%.1f".format(station.frequency)}"

@@ -49,6 +49,9 @@ interface StationAudioBackend {
     fun setRecording(station: StationKey, file: Path?): Int
     fun remove(station: StationKey)
     fun shutdown()
+
+    /** Tries to decode a song file. Null when it plays, otherwise why not. Blocking: call off-thread. */
+    fun validateSong(file: Path): String?
 }
 
 object StationAudio {

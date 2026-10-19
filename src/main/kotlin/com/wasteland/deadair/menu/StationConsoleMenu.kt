@@ -27,8 +27,8 @@ class StationConsoleMenu(
 ) : AbstractContainerMenu(ModMenus.STATION_CONSOLE_MENU.get(), containerId) {
 
     companion object {
-        const val DISC_ROW_Y = 126
-        const val INVENTORY_Y = 154
+        const val DISC_ROW_Y = 142
+        const val INVENTORY_Y = 172
     }
 
     constructor(containerId: Int, playerInventory: Inventory, buf: RegistryFriendlyByteBuf) : this(
@@ -72,6 +72,9 @@ class StationConsoleMenu(
     val recording: Boolean get() = data.get(7) == 1
     val voiceChat: Boolean get() = data.get(8) == 1
     val streamUrlsEnabled: Boolean get() = data.get(9) == 1
+    val discCount: Int get() = data.get(10)
+    val hasStreamUrl: Boolean get() = data.get(11) == 1
+    val hasTower: Boolean get() = data.get(12) == 1
 
     override fun quickMoveStack(player: Player, index: Int): ItemStack {
         val discs = StationConsoleBlockEntity.DISC_SLOTS

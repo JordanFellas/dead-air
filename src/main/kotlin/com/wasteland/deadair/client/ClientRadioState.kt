@@ -26,10 +26,38 @@ object ClientRadioState {
         stationFrequency = frequency
     }
 
+    /** The open Station Console's playlist (MUSIC tab) and what's on the air from it. */
+    var playlist: List<com.wasteland.deadair.block.entity.StationConsoleBlockEntity.PlaylistEntry> = emptyList()
+        private set
+    var playlistCurrent: String = ""
+        private set
+
+    /** Last console message (song added, link failed...) and when it arrived. */
+    var notice: String = ""
+        private set
+    var noticeError: Boolean = false
+        private set
+    var noticeTime: Long = 0L
+        private set
+
+    fun updatePlaylist(entries: List<com.wasteland.deadair.block.entity.StationConsoleBlockEntity.PlaylistEntry>, current: String) {
+        playlist = entries
+        playlistCurrent = current
+    }
+
+    fun showNotice(message: String, error: Boolean) {
+        notice = message
+        noticeError = error
+        noticeTime = System.currentTimeMillis()
+    }
+
     fun clear() {
         quality = 0.0f
         obstructed = false
         updateStation("", "", 0.0f)
+        playlist = emptyList()
+        playlistCurrent = ""
+        notice = ""
     }
 
     /** 0..4 bars, like a phone signal meter. */

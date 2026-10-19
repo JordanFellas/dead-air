@@ -7,7 +7,10 @@ import com.wasteland.deadair.network.packets.PacketRadioStatic
 import com.wasteland.deadair.network.packets.PacketRadioStatus
 import com.wasteland.deadair.network.packets.PacketRadioTransmit
 import com.wasteland.deadair.network.packets.PacketSetRadioSettings
+import com.wasteland.deadair.network.packets.PacketSongUpload
 import com.wasteland.deadair.network.packets.PacketStationDisc
+import com.wasteland.deadair.network.packets.PacketStationNotice
+import com.wasteland.deadair.network.packets.PacketStationPlaylist
 import com.wasteland.deadair.network.packets.PacketStationInfo
 import com.wasteland.deadair.network.packets.PacketStationSettings
 import com.wasteland.deadair.network.packets.PacketTunerSettings
@@ -21,7 +24,7 @@ object PacketHandler {
 
     @SubscribeEvent
     fun registerPayloads(event: RegisterPayloadHandlersEvent) {
-        val registrar = event.registrar("4")
+        val registrar = event.registrar("5")
 
         registrar.playToServer(
             PacketRadioTransmit.TYPE,
@@ -70,5 +73,8 @@ object PacketHandler {
         registrar.playToClient(PacketStationInfo.TYPE, PacketStationInfo.STREAM_CODEC, PacketStationInfo::handle)
         registrar.playToServer(PacketStationSettings.TYPE, PacketStationSettings.STREAM_CODEC, PacketStationSettings::handle)
         registrar.playToServer(PacketTunerSettings.TYPE, PacketTunerSettings.STREAM_CODEC, PacketTunerSettings::handle)
+        registrar.playToServer(PacketSongUpload.TYPE, PacketSongUpload.STREAM_CODEC, PacketSongUpload::handle)
+        registrar.playToClient(PacketStationNotice.TYPE, PacketStationNotice.STREAM_CODEC, PacketStationNotice::handle)
+        registrar.playToClient(PacketStationPlaylist.TYPE, PacketStationPlaylist.STREAM_CODEC, PacketStationPlaylist::handle)
     }
 }
