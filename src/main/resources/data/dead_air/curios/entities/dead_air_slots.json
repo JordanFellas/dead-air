@@ -1,0 +1,9 @@
+{
+    "slots":  [
+                  "belt",
+                  "back"
+              ],
+    "entities":  [
+                     "player"
+                 ]
+}

@@ -1,0 +1,23 @@
+{
+    "replace":  false,
+    "values":  [
+                   "dead_air:radio_tower_controller",
+                   "dead_air:broadcast_controller",
+                   "dead_air:radio_tower_frame",
+                   "dead_air:heavy_tower_frame",
+                   "dead_air:mast_section_large",
+                   "dead_air:radio_mast_section",
+                   "dead_air:mast_section_small",
+                   "dead_air:radio_tower_ladder",
+                   "dead_air:radio_tower_antenna",
+                   "dead_air:parabolic_dish",
+                   "dead_air:yagi_antenna",
+                   "dead_air:panel_antenna",
+                   "dead_air:drum_dish",
+                   "dead_air:tower_platform",
+                   "dead_air:sloped_lattice_panel",
+                   "dead_air:sloped_heavy_panel",
+                   "dead_air:aviation_light",
+                   "dead_air:tower_foundation"
+               ]
+}

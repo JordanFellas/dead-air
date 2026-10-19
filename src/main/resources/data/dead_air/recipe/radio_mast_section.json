@@ -1,0 +1,23 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "BRB",
+                    "BNB",
+                    "BRB"
+                ],
+    "key":  {
+                "R":  {
+                          "item":  "minecraft:red_dye"
+                      },
+                "B":  {
+                          "item":  "minecraft:iron_bars"
+                      },
+                "N":  {
+                          "item":  "minecraft:iron_nugget"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:radio_mast_section",
+                   "count":  6
+               }
+}

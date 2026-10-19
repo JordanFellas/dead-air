@@ -1,0 +1,81 @@
+{
+    "parent":  "minecraft:block/block",
+    "render_type":  "minecraft:cutout",
+    "textures":  {
+                     "particle":  "dead_air:block/paint_white",
+                     "red":  "dead_air:block/paint_red",
+                     "white":  "dead_air:block/paint_white",
+                     "steel":  "dead_air:block/steel",
+                     "dark":  "dead_air:block/steel_dark"
+                 },
+    "elements":  [
+                     {
+                         "from":  [
+                                      0,
+                                      0,
+                                      0
+                                  ],
+                         "to":  [
+                                    2.5,
+                                    16,
+                                    2.5
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                2,
+                                                                16
+                                                            ],
+                                                     "texture":  "#white"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                2,
+                                                                16
+                                                            ],
+                                                     "texture":  "#white"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               2,
+                                                               16
+                                                           ],
+                                                    "texture":  "#white"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               2,
+                                                               16
+                                                           ],
+                                                    "texture":  "#white"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             0,
+                                                             0,
+                                                             2,
+                                                             2
+                                                         ],
+                                                  "texture":  "#white"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               2,
+                                                               2
+                                                           ],
+                                                    "texture":  "#white"
+                                                }
+                                   }
+                     }
+                 ]
+}

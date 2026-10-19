@@ -1,0 +1,117 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.78'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+}
+
+version = mod_version
+group = 'com.wasteland.deadair'
+base.archivesName = mod_id
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+compileKotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_21
+    }
+}
+
+neoForge {
+    version = neo_version
+
+    validateAccessTransformers = true
+
+    runs {
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+
+        client {
+            client()
+        }
+
+        // Player one for multiplayer testing: joins the local test server automatically
+        clientJoin {
+            client()
+            programArgument '--quickPlayMultiplayer'
+            programArgument 'localhost:25566'
+        }
+
+        // Second player for multiplayer testing (e.g. radio voice chat): joins the local server automatically
+        client2 {
+            client()
+            gameDirectory = project.file('run-client2')
+            programArgument '--username'
+            programArgument 'Dev2'
+            programArgument '--quickPlayMultiplayer'
+            programArgument 'localhost:25566'
+        }
+
+        server {
+            server()
+            gameDirectory = project.file('run-server')
+            programArgument '--nogui'
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        name = 'Kotlin for Forge'
+        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        content { includeGroup "thedarkcolour" }
+    }
+    maven {
+        name = 'henkelmax.public'
+        url = 'https://maven.maxhenkel.de/repository/public'
+    }
+    maven {
+        name = 'Curios'
+        url = 'https://maven.theillusivec4.top/'
+        content { includeGroup "top.theillusivec4.curios" }
+    }
+}
+
+dependencies {
+    implementation 'thedarkcolour:kotlinforforge-neoforge:5.5.0'
+    compileOnly 'de.maxhenkel.voicechat:voicechat-api:2.5.0'
+    compileOnly 'top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api'
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            neo_version_range      : neo_version_range,
+            loader_version_range   : loader_version_range,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description,
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

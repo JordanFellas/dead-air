@@ -1,0 +1,19 @@
+{
+    "variants":  {
+                     "facing=north":  {
+                                          "model":  "dead_air:block/yagi_antenna"
+                                      },
+                     "facing=east":  {
+                                         "model":  "dead_air:block/yagi_antenna",
+                                         "y":  90
+                                     },
+                     "facing=south":  {
+                                          "model":  "dead_air:block/yagi_antenna",
+                                          "y":  180
+                                      },
+                     "facing=west":  {
+                                         "model":  "dead_air:block/yagi_antenna",
+                                         "y":  270
+                                     }
+                 }
+}

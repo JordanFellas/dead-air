@@ -1,0 +1,26 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "CRC",
+                    "BGB",
+                    "CRC"
+                ],
+    "key":  {
+                "C":  {
+                          "item":  "minecraft:copper_ingot"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "G":  {
+                          "item":  "minecraft:gold_ingot"
+                      },
+                "B":  {
+                          "item":  "dead_air:battery_cell"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:lithium_battery",
+                   "count":  1
+               }
+}

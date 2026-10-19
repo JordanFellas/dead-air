@@ -1,0 +1,16 @@
+{
+    "variants":  {
+                     "part=0":  {
+                                    "model":  "dead_air:block/radio_tower_antenna_0"
+                                },
+                     "part=1":  {
+                                    "model":  "dead_air:block/radio_tower_antenna_1"
+                                },
+                     "part=2":  {
+                                    "model":  "dead_air:block/radio_tower_antenna_2"
+                                },
+                     "part=3":  {
+                                    "model":  "dead_air:block/radio_tower_antenna_3"
+                                }
+                 }
+}

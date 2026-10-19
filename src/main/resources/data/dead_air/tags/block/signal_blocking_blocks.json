@@ -1,0 +1,27 @@
+{
+    "replace":  false,
+    "values":  [
+                   "minecraft:obsidian",
+                   "minecraft:crying_obsidian",
+                   "minecraft:bedrock",
+                   "minecraft:reinforced_deepslate",
+                   "minecraft:deepslate",
+                   "minecraft:cobbled_deepslate",
+                   "minecraft:polished_deepslate",
+                   "minecraft:chiseled_deepslate",
+                   "minecraft:deepslate_bricks",
+                   "minecraft:cracked_deepslate_bricks",
+                   "minecraft:deepslate_tiles",
+                   "minecraft:cracked_deepslate_tiles",
+                   "minecraft:iron_block",
+                   "minecraft:iron_door",
+                   "minecraft:iron_trapdoor",
+                   "minecraft:iron_bars",
+                   "minecraft:netherite_block",
+                   "minecraft:anvil",
+                   "minecraft:chipped_anvil",
+                   "minecraft:damaged_anvil",
+                   "minecraft:raw_iron_block",
+                   "minecraft:lodestone"
+               ]
+}

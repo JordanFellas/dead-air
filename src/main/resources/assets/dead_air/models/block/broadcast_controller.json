@@ -1,0 +1,8 @@
+{
+    "parent":  "minecraft:block/orientable",
+    "textures":  {
+                     "front":  "dead_air:block/broadcast_controller_front",
+                     "side":  "dead_air:block/broadcast_controller_side",
+                     "top":  "dead_air:block/broadcast_controller_top"
+                 }
+}

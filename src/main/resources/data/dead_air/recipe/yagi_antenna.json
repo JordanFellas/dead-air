@@ -1,0 +1,20 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "NCN",
+                    "NCN",
+                    "NCN"
+                ],
+    "key":  {
+                "N":  {
+                          "item":  "minecraft:iron_nugget"
+                      },
+                "C":  {
+                          "item":  "minecraft:copper_ingot"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:yagi_antenna",
+                   "count":  1
+               }
+}

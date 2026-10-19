@@ -1,0 +1,23 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "FIF",
+                    "IRI",
+                    "FIF"
+                ],
+    "key":  {
+                "R":  {
+                          "item":  "minecraft:red_dye"
+                      },
+                "F":  {
+                          "item":  "dead_air:radio_tower_frame"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:heavy_tower_frame",
+                   "count":  4
+               }
+}

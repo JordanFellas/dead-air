@@ -1,0 +1,474 @@
+{
+    "parent":  "minecraft:block/block",
+    "render_type":  "minecraft:cutout",
+    "textures":  {
+                     "particle":  "dead_air:item/battery_shell",
+                     "shell":  "dead_air:item/battery_shell",
+                     "label":  "dead_air:item/battery_label_blue",
+                     "copper":  "dead_air:item/battery_copper"
+                 },
+    "elements":  [
+                     {
+                         "from":  [
+                                      4.5,
+                                      0,
+                                      4.5
+                                  ],
+                         "to":  [
+                                    11.5,
+                                    12,
+                                    11.5
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                7,
+                                                                12
+                                                            ],
+                                                     "texture":  "#shell"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                7,
+                                                                12
+                                                            ],
+                                                     "texture":  "#shell"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               12
+                                                           ],
+                                                    "texture":  "#shell"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               12
+                                                           ],
+                                                    "texture":  "#shell"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             0,
+                                                             0,
+                                                             7,
+                                                             7
+                                                         ],
+                                                  "texture":  "#shell"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               7
+                                                           ],
+                                                    "texture":  "#shell"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      4.4,
+                                      2.5,
+                                      4.4
+                                  ],
+                         "to":  [
+                                    11.6,
+                                    9.5,
+                                    11.6
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                7,
+                                                                7
+                                                            ],
+                                                     "texture":  "#label"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                7,
+                                                                7
+                                                            ],
+                                                     "texture":  "#label"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               7
+                                                           ],
+                                                    "texture":  "#label"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               7
+                                                           ],
+                                                    "texture":  "#label"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             0,
+                                                             0,
+                                                             7,
+                                                             7
+                                                         ],
+                                                  "texture":  "#label"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               7
+                                                           ],
+                                                    "texture":  "#label"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      5,
+                                      12,
+                                      5
+                                  ],
+                         "to":  [
+                                    11,
+                                    13,
+                                    11
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                6,
+                                                                1
+                                                            ],
+                                                     "texture":  "#copper"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                6,
+                                                                1
+                                                            ],
+                                                     "texture":  "#copper"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               6,
+                                                               1
+                                                           ],
+                                                    "texture":  "#copper"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               6,
+                                                               1
+                                                           ],
+                                                    "texture":  "#copper"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             0,
+                                                             0,
+                                                             6,
+                                                             6
+                                                         ],
+                                                  "texture":  "#copper"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               6,
+                                                               6
+                                                           ],
+                                                    "texture":  "#copper"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      6.5,
+                                      13,
+                                      6.5
+                                  ],
+                         "to":  [
+                                    9.5,
+                                    14.5,
+                                    9.5
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                3,
+                                                                2
+                                                            ],
+                                                     "texture":  "#copper"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                3,
+                                                                2
+                                                            ],
+                                                     "texture":  "#copper"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               3,
+                                                               2
+                                                           ],
+                                                    "texture":  "#copper"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               3,
+                                                               2
+                                                           ],
+                                                    "texture":  "#copper"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             0,
+                                                             0,
+                                                             3,
+                                                             3
+                                                         ],
+                                                  "texture":  "#copper"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               3,
+                                                               3
+                                                           ],
+                                                    "texture":  "#copper"
+                                                }
+                                   }
+                     },
+                     {
+                         "from":  [
+                                      4.4,
+                                      0,
+                                      4.4
+                                  ],
+                         "to":  [
+                                    11.6,
+                                    0.75,
+                                    11.6
+                                ],
+                         "faces":  {
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                7,
+                                                                1
+                                                            ],
+                                                     "texture":  "#shell"
+                                                 },
+                                       "south":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                7,
+                                                                1
+                                                            ],
+                                                     "texture":  "#shell"
+                                                 },
+                                       "east":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               1
+                                                           ],
+                                                    "texture":  "#shell"
+                                                },
+                                       "west":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               1
+                                                           ],
+                                                    "texture":  "#shell"
+                                                },
+                                       "up":  {
+                                                  "uv":  [
+                                                             0,
+                                                             0,
+                                                             7,
+                                                             7
+                                                         ],
+                                                  "texture":  "#shell"
+                                              },
+                                       "down":  {
+                                                    "uv":  [
+                                                               0,
+                                                               0,
+                                                               7,
+                                                               7
+                                                           ],
+                                                    "texture":  "#shell"
+                                                }
+                                   }
+                     }
+                 ],
+    "gui_light":  "front",
+    "display":  {
+                    "gui":  {
+                                "rotation":  [
+                                                 20,
+                                                 -30,
+                                                 0
+                                             ],
+                                "translation":  [
+                                                    0,
+                                                    0.5,
+                                                    0
+                                                ],
+                                "scale":  [
+                                              1,
+                                              1,
+                                              1
+                                          ]
+                            },
+                    "ground":  {
+                                   "rotation":  [
+                                                    0,
+                                                    0,
+                                                    0
+                                                ],
+                                   "translation":  [
+                                                       0,
+                                                       2,
+                                                       0
+                                                   ],
+                                   "scale":  [
+                                                 0.5,
+                                                 0.5,
+                                                 0.5
+                                             ]
+                               },
+                    "fixed":  {
+                                  "rotation":  [
+                                                   0,
+                                                   0,
+                                                   0
+                                               ],
+                                  "translation":  [
+                                                      0,
+                                                      0,
+                                                      0
+                                                  ],
+                                  "scale":  [
+                                                0.8,
+                                                0.8,
+                                                0.8
+                                            ]
+                              },
+                    "thirdperson_righthand":  {
+                                                  "rotation":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ],
+                                                  "translation":  [
+                                                                      0,
+                                                                      2,
+                                                                      1
+                                                                  ],
+                                                  "scale":  [
+                                                                0.45,
+                                                                0.45,
+                                                                0.45
+                                                            ]
+                                              },
+                    "thirdperson_lefthand":  {
+                                                 "rotation":  [
+                                                                  0,
+                                                                  0,
+                                                                  0
+                                                              ],
+                                                 "translation":  [
+                                                                     0,
+                                                                     2,
+                                                                     1
+                                                                 ],
+                                                 "scale":  [
+                                                               0.45,
+                                                               0.45,
+                                                               0.45
+                                                           ]
+                                             },
+                    "firstperson_righthand":  {
+                                                  "rotation":  [
+                                                                   0,
+                                                                   -30,
+                                                                   0
+                                                               ],
+                                                  "translation":  [
+                                                                      0,
+                                                                      2,
+                                                                      0
+                                                                  ],
+                                                  "scale":  [
+                                                                0.45,
+                                                                0.45,
+                                                                0.45
+                                                            ]
+                                              },
+                    "firstperson_lefthand":  {
+                                                 "rotation":  [
+                                                                  0,
+                                                                  30,
+                                                                  0
+                                                              ],
+                                                 "translation":  [
+                                                                     0,
+                                                                     2,
+                                                                     0
+                                                                 ],
+                                                 "scale":  [
+                                                               0.45,
+                                                               0.45,
+                                                               0.45
+                                                           ]
+                                             }
+                }
+}

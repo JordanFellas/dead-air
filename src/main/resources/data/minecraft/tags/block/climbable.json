@@ -1,0 +1,9 @@
+{
+    "replace":  false,
+    "values":  [
+                   "dead_air:radio_tower_ladder",
+                   "dead_air:mast_section_large",
+                   "dead_air:radio_mast_section",
+                   "dead_air:mast_section_small"
+               ]
+}

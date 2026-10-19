@@ -1,0 +1,204 @@
+{
+    "multipart":  [
+                      {
+                          "when":  {
+                                       "corner":  "none",
+                                       "facing":  "north"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel",
+                                        "y":  0
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "north"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  0
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "north"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "north"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  0
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "north"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  270
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "none",
+                                       "facing":  "east"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "east"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "east"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  180
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "east"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "east"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  0
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "none",
+                                       "facing":  "south"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel",
+                                        "y":  180
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "south"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  180
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "south"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  270
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "south"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  180
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "south"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "none",
+                                       "facing":  "west"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel",
+                                        "y":  270
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "west"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  270
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "cw",
+                                       "facing":  "west"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  0
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "west"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_left",
+                                        "y":  270
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "corner":  "ccw",
+                                       "facing":  "west"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/sloped_heavy_panel_right",
+                                        "y":  180
+                                    }
+                      }
+                  ]
+}

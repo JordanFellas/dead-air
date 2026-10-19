@@ -1,0 +1,8 @@
+{
+    "parent":  "minecraft:block/cube_bottom_top",
+    "textures":  {
+                     "top":  "dead_air:block/tower_foundation_top",
+                     "bottom":  "dead_air:block/tower_foundation_top",
+                     "side":  "dead_air:block/tower_foundation_side"
+                 }
+}

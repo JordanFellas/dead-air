@@ -1,0 +1,29 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "IDI",
+                    "CRC",
+                    "IBI"
+                ],
+    "key":  {
+                "D":  {
+                          "item":  "minecraft:comparator"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone_block"
+                      },
+                "B":  {
+                          "item":  "dead_air:battery_cell"
+                      },
+                "C":  {
+                          "item":  "dead_air:radio_tower_controller"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_block"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:broadcast_controller",
+                   "count":  1
+               }
+}

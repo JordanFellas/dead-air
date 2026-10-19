@@ -1,0 +1,29 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "LAL",
+                    "CRC",
+                    "LBL"
+                ],
+    "key":  {
+                "C":  {
+                          "item":  "minecraft:copper_ingot"
+                      },
+                "L":  {
+                          "item":  "minecraft:leather"
+                      },
+                "R":  {
+                          "item":  "dead_air:handheld_radio"
+                      },
+                "B":  {
+                          "item":  "dead_air:battery_cell"
+                      },
+                "A":  {
+                          "item":  "minecraft:lightning_rod"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:radio_backpack",
+                   "count":  1
+               }
+}

@@ -1,0 +1,79 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "dead_air:block/radio_tower_ladder",
+    "ladder": "dead_air:block/radio_tower_ladder"
+  },
+  "elements": [
+    {
+      "comment": "Left Rail",
+      "from": [2, 0, 14],
+      "to": [4, 16, 16],
+      "faces": {
+        "north": { "texture": "#ladder" },
+        "south": { "texture": "#ladder", "cullface": "south" },
+        "west":  { "texture": "#ladder" },
+        "east":  { "texture": "#ladder" },
+        "up":    { "texture": "#ladder" },
+        "down":  { "texture": "#ladder" }
+      }
+    },
+    {
+      "comment": "Right Rail",
+      "from": [12, 0, 14],
+      "to": [14, 16, 16],
+      "faces": {
+        "north": { "texture": "#ladder" },
+        "south": { "texture": "#ladder", "cullface": "south" },
+        "west":  { "texture": "#ladder" },
+        "east":  { "texture": "#ladder" },
+        "up":    { "texture": "#ladder" },
+        "down":  { "texture": "#ladder" }
+      }
+    },
+    {
+      "comment": "Rung 1",
+      "from": [4, 2, 14.5],
+      "to": [12, 3.5, 15.5],
+      "faces": {
+        "north": { "texture": "#ladder" },
+        "south": { "texture": "#ladder" },
+        "up":    { "texture": "#ladder" },
+        "down":  { "texture": "#ladder" }
+      }
+    },
+    {
+      "comment": "Rung 2",
+      "from": [4, 6, 14.5],
+      "to": [12, 7.5, 15.5],
+      "faces": {
+        "north": { "texture": "#ladder" },
+        "south": { "texture": "#ladder" },
+        "up":    { "texture": "#ladder" },
+        "down":  { "texture": "#ladder" }
+      }
+    },
+    {
+      "comment": "Rung 3",
+      "from": [4, 10, 14.5],
+      "to": [12, 11.5, 15.5],
+      "faces": {
+        "north": { "texture": "#ladder" },
+        "south": { "texture": "#ladder" },
+        "up":    { "texture": "#ladder" },
+        "down":  { "texture": "#ladder" }
+      }
+    },
+    {
+      "comment": "Rung 4",
+      "from": [4, 14, 14.5],
+      "to": [12, 15.5, 15.5],
+      "faces": {
+        "north": { "texture": "#ladder" },
+        "south": { "texture": "#ladder" },
+        "up":    { "texture": "#ladder" },
+        "down":  { "texture": "#ladder" }
+      }
+    }
+  ]
+}

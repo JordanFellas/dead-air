@@ -1,0 +1,20 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "NRN",
+                    "N N",
+                    "NRN"
+                ],
+    "key":  {
+                "N":  {
+                          "item":  "minecraft:iron_nugget"
+                      },
+                "R":  {
+                          "item":  "minecraft:red_dye"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:mast_section_small",
+                   "count":  6
+               }
+}

@@ -1,0 +1,30 @@
+{
+  "radio_click_on": {
+    "category": "player",
+    "sounds": [
+      "dead_air:radio_click_on"
+    ],
+    "subtitle": "subtitles.dead_air.radio_click_on"
+  },
+  "radio_click_off": {
+    "category": "player",
+    "sounds": [
+      "dead_air:radio_click_off"
+    ],
+    "subtitle": "subtitles.dead_air.radio_click_off"
+  },
+  "radio_static": {
+    "category": "player",
+    "sounds": [
+      "dead_air:radio_static"
+    ],
+    "subtitle": "subtitles.dead_air.radio_static"
+  },
+  "radio_beep": {
+    "category": "player",
+    "sounds": [
+      "dead_air:radio_beep"
+    ],
+    "subtitle": "subtitles.dead_air.radio_beep"
+  }
+}

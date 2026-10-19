@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    "BCB",
+    " B "
+  ],
+  "key": {
+    "L": { "item": "minecraft:lightning_rod" },
+    "B": { "item": "minecraft:iron_bars" },
+    "C": { "item": "minecraft:copper_ingot" }
+  },
+  "result": {
+    "id": "dead_air:radio_tower_antenna",
+    "count": 1
+  }
+}

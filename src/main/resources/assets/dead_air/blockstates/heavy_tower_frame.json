@@ -1,0 +1,78 @@
+{
+    "multipart":  [
+                      {
+                          "when":  {
+                                       "north":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_face"
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "east":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_face",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "south":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_face",
+                                        "y":  180
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "west":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_face",
+                                        "y":  270
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "west":  "false",
+                                       "north":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_leg"
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "east":  "false",
+                                       "north":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_leg",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "south":  "false",
+                                       "east":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_leg",
+                                        "y":  180
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "south":  "false",
+                                       "west":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/heavy_tower_frame_leg",
+                                        "y":  270
+                                    }
+                      }
+                  ]
+}

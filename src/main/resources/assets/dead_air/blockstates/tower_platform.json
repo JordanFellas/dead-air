@@ -1,0 +1,44 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "dead_air:block/tower_platform_deck"
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "north":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/tower_platform_rail"
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "east":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/tower_platform_rail",
+                                        "y":  90
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "south":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/tower_platform_rail",
+                                        "y":  180
+                                    }
+                      },
+                      {
+                          "when":  {
+                                       "west":  "false"
+                                   },
+                          "apply":  {
+                                        "model":  "dead_air:block/tower_platform_rail",
+                                        "y":  270
+                                    }
+                      }
+                  ]
+}

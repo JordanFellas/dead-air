@@ -1,0 +1,23 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    " R ",
+                    "RGR",
+                    " I "
+                ],
+    "key":  {
+                "G":  {
+                          "item":  "minecraft:glowstone_dust"
+                      },
+                "R":  {
+                          "item":  "minecraft:red_stained_glass"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_nugget"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:aviation_light",
+                   "count":  2
+               }
+}

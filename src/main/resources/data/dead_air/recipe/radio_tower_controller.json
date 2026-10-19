@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ICI",
+    "RBR",
+    "III"
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "C": { "item": "minecraft:comparator" },
+    "R": { "item": "minecraft:repeater" },
+    "B": { "item": "minecraft:copper_block" }
+  },
+  "result": {
+    "id": "dead_air:radio_tower_controller",
+    "count": 1
+  }
+}

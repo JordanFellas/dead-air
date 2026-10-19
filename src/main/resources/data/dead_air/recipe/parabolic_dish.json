@@ -1,0 +1,23 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "III",
+                    "IRI",
+                    " S "
+                ],
+    "key":  {
+                "S":  {
+                          "item":  "dead_air:radio_mast_section"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:parabolic_dish",
+                   "count":  1
+               }
+}

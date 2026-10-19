@@ -1,0 +1,10 @@
+{
+    "variants":  {
+                     "taper=false":  {
+                                         "model":  "dead_air:block/mast_section_small"
+                                     },
+                     "taper=true":  {
+                                        "model":  "dead_air:block/mast_section_small_taper"
+                                    }
+                 }
+}

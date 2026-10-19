@@ -1,0 +1,20 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "B  ",
+                    "FB ",
+                    "FFB"
+                ],
+    "key":  {
+                "F":  {
+                          "item":  "dead_air:radio_tower_frame"
+                      },
+                "B":  {
+                          "item":  "minecraft:iron_bars"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:sloped_lattice_panel",
+                   "count":  4
+               }
+}

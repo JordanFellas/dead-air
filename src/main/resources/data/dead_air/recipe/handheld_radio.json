@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L  ",
+    "CGC",
+    "RNR"
+  ],
+  "key": {
+    "L": { "item": "minecraft:lightning_rod" },
+    "C": { "item": "minecraft:copper_ingot" },
+    "G": { "item": "minecraft:glass_pane" },
+    "R": { "item": "minecraft:redstone" },
+    "N": { "item": "minecraft:iron_nugget" }
+  },
+  "result": {
+    "id": "dead_air:handheld_radio",
+    "count": 1
+  }
+}

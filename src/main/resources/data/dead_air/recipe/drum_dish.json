@@ -1,0 +1,23 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    " Q ",
+                    "QCQ",
+                    " I "
+                ],
+    "key":  {
+                "Q":  {
+                          "item":  "minecraft:quartz_block"
+                      },
+                "C":  {
+                          "item":  "minecraft:copper_block"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:drum_dish",
+                   "count":  1
+               }
+}

@@ -1,0 +1,26 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "IRI",
+                    "BNB",
+                    "IRI"
+                ],
+    "key":  {
+                "R":  {
+                          "item":  "minecraft:red_dye"
+                      },
+                "B":  {
+                          "item":  "minecraft:iron_bars"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "N":  {
+                          "item":  "minecraft:iron_nugget"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:mast_section_large",
+                   "count":  4
+               }
+}

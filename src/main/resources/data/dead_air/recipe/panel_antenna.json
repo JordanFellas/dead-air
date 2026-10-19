@@ -1,0 +1,23 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "Q",
+                    "C",
+                    "I"
+                ],
+    "key":  {
+                "Q":  {
+                          "item":  "minecraft:quartz"
+                      },
+                "C":  {
+                          "item":  "minecraft:copper_ingot"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "result":  {
+                   "id":  "dead_air:panel_antenna",
+                   "count":  2
+               }
+}

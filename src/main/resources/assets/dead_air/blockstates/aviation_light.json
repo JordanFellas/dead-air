@@ -1,0 +1,94 @@
+{
+    "variants":  {
+                     "face=floor,facing=north,rail=false":  {
+                                                                "model":  "dead_air:block/aviation_light"
+                                                            },
+                     "face=floor,facing=east,rail=false":  {
+                                                               "model":  "dead_air:block/aviation_light",
+                                                               "y":  90
+                                                           },
+                     "face=floor,facing=south,rail=false":  {
+                                                                "model":  "dead_air:block/aviation_light",
+                                                                "y":  180
+                                                            },
+                     "face=floor,facing=west,rail=false":  {
+                                                               "model":  "dead_air:block/aviation_light",
+                                                               "y":  270
+                                                           },
+                     "face=wall,facing=north,rail=false":  {
+                                                               "model":  "dead_air:block/aviation_light_wall"
+                                                           },
+                     "face=wall,facing=east,rail=false":  {
+                                                              "model":  "dead_air:block/aviation_light_wall",
+                                                              "y":  90
+                                                          },
+                     "face=wall,facing=south,rail=false":  {
+                                                               "model":  "dead_air:block/aviation_light_wall",
+                                                               "y":  180
+                                                           },
+                     "face=wall,facing=west,rail=false":  {
+                                                              "model":  "dead_air:block/aviation_light_wall",
+                                                              "y":  270
+                                                          },
+                     "face=ceiling,facing=north,rail=false":  {
+                                                                  "model":  "dead_air:block/aviation_light_ceiling"
+                                                              },
+                     "face=ceiling,facing=east,rail=false":  {
+                                                                 "model":  "dead_air:block/aviation_light_ceiling",
+                                                                 "y":  90
+                                                             },
+                     "face=ceiling,facing=south,rail=false":  {
+                                                                  "model":  "dead_air:block/aviation_light_ceiling",
+                                                                  "y":  180
+                                                              },
+                     "face=ceiling,facing=west,rail=false":  {
+                                                                 "model":  "dead_air:block/aviation_light_ceiling",
+                                                                 "y":  270
+                                                             },
+                     "face=floor,facing=north,rail=true":  {
+                                                               "model":  "dead_air:block/aviation_light_rail"
+                                                           },
+                     "face=floor,facing=east,rail=true":  {
+                                                              "model":  "dead_air:block/aviation_light_rail",
+                                                              "y":  90
+                                                          },
+                     "face=floor,facing=south,rail=true":  {
+                                                               "model":  "dead_air:block/aviation_light_rail",
+                                                               "y":  180
+                                                           },
+                     "face=floor,facing=west,rail=true":  {
+                                                              "model":  "dead_air:block/aviation_light_rail",
+                                                              "y":  270
+                                                          },
+                     "face=wall,facing=north,rail=true":  {
+                                                              "model":  "dead_air:block/aviation_light_rail"
+                                                          },
+                     "face=wall,facing=east,rail=true":  {
+                                                             "model":  "dead_air:block/aviation_light_rail",
+                                                             "y":  90
+                                                         },
+                     "face=wall,facing=south,rail=true":  {
+                                                              "model":  "dead_air:block/aviation_light_rail",
+                                                              "y":  180
+                                                          },
+                     "face=wall,facing=west,rail=true":  {
+                                                             "model":  "dead_air:block/aviation_light_rail",
+                                                             "y":  270
+                                                         },
+                     "face=ceiling,facing=north,rail=true":  {
+                                                                 "model":  "dead_air:block/aviation_light_rail"
+                                                             },
+                     "face=ceiling,facing=east,rail=true":  {
+                                                                "model":  "dead_air:block/aviation_light_rail",
+                                                                "y":  90
+                                                            },
+                     "face=ceiling,facing=south,rail=true":  {
+                                                                 "model":  "dead_air:block/aviation_light_rail",
+                                                                 "y":  180
+                                                             },
+                     "face=ceiling,facing=west,rail=true":  {
+                                                                "model":  "dead_air:block/aviation_light_rail",
+                                                                "y":  270
+                                                            }
+                 }
+}
